@@ -9,6 +9,21 @@ function Hero() {
         <p className="text-gray-400 text-lg">
           Specializing in React.js & Node.js
         </p>
+        <div className="mt-8 flex gap-4 justify-center">
+          <a
+            href="#projects"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+          >
+            View My Work
+          </a>
+
+          <a
+            href="#contact"
+            className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
+          >
+            Contact Me
+          </a>
+        </div>
       </div>
     </section>
   )
