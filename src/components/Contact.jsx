@@ -37,59 +37,92 @@ function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-gray-900">
-      <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-white text-center mb-16">
-          Contact Me
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl font-bold text-white text-center mb-4">
+          Get In <span className="text-blue-400">Touch</span>
         </h2>
-        <div className="bg-gray-800 rounded-xl p-8">
-          <div className="flex flex-col gap-6">
-            <div>
-              <label className="text-gray-400 text-sm mb-2 block">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your name"
-                className="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-blue-500 focus:outline-none"
-              />
+        <p className="text-gray-400 text-center mb-16 max-w-xl mx-auto">
+          Have a project in mind? Let's talk. I'm available for freelance work
+          and always open to new opportunities.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="flex flex-col gap-8">
+            <div className="flex items-start gap-4">
+              <div className="bg-blue-500 bg-opacity-20 p-3 rounded-lg">
+                <span className="text-blue-400 text-xl">📧</span>
+              </div>
+              <div>
+                <h3 className="text-white font-bold mb-1">Email</h3>
+                <p className="text-gray-400">mahmoudelsharawy92@gmail.com</p>
+              </div>
             </div>
-            <div>
-              <label className="text-gray-400 text-sm mb-2 block">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Your email"
-                className="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-blue-500 focus:outline-none"
-              />
+            <div className="flex items-start gap-4">
+              <div className="bg-blue-500 bg-opacity-20 p-3 rounded-lg">
+                <span className="text-blue-400 text-xl">💼</span>
+              </div>
+              <div>
+                <h3 className="text-white font-bold mb-1">Upwork</h3>
+                <p className="text-gray-400">Available for freelance projects</p>
+              </div>
             </div>
-            <div>
-              <label className="text-gray-400 text-sm mb-2 block">
-                Message
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={5}
-                placeholder="Your message"
-                className="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-blue-500 focus:outline-none resize-none"
-              />
+            <div className="flex items-start gap-4">
+              <div className="bg-blue-500 bg-opacity-20 p-3 rounded-lg">
+                <span className="text-blue-400 text-xl">📍</span>
+              </div>
+              <div>
+                <h3 className="text-white font-bold mb-1">Location</h3>
+                <p className="text-gray-400">Alexandria, Egypt</p>
+              </div>
             </div>
-            {status === 'success' && (
-              <p className="text-green-400">Message sent successfully!</p>
-            )}
-            {status === 'error' && (
-              <p className="text-red-400">Something went wrong. Try again.</p>
-            )}
-            <button
-              onClick={handleSubmit}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 rounded-lg transition-colors"
-            >
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
-            </button>
+          </div>
+          <div className="bg-gray-800 rounded-xl p-8">
+            <div className="flex flex-col gap-6">
+              <div>
+                <label className="text-gray-400 text-sm mb-2 block">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                  className="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-blue-500 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label className="text-gray-400 text-sm mb-2 block">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your email"
+                  className="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-blue-500 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label className="text-gray-400 text-sm mb-2 block">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={5}
+                  placeholder="Your message"
+                  className="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-blue-500 focus:outline-none resize-none"
+                />
+              </div>
+              {status === 'success' && (
+                <p className="text-green-400">Message sent successfully!</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400">Something went wrong. Try again.</p>
+              )}
+              <button
+                onClick={handleSubmit}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 rounded-lg transition-colors"
+              >
+                {status === 'sending' ? 'Sending...' : 'Send Message'}
+              </button>
+            </div>
           </div>
         </div>
       </div>
