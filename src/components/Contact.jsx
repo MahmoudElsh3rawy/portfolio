@@ -1,4 +1,12 @@
 import { useState } from 'react'
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhone,
+} from 'react-icons/fa'
+import { SiUpwork } from 'react-icons/si'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -6,7 +14,6 @@ function Contact() {
     email: '',
     message: '',
   })
-
   const [status, setStatus] = useState('')
 
   const handleChange = (e) => {
@@ -16,14 +23,12 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
-
     try {
       const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
-
       if (response.ok) {
         setStatus('success')
         setFormData({ name: '', email: '', message: '' })
@@ -36,47 +41,105 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gray-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-white text-center mb-4">
-          Get In <span className="text-blue-400">Touch</span>
+    <section id="contact" className="py-20 bg-transparent">
+      <div className="max-w-4xl mx-auto px-6" data-aos="fade-up">
+        <h2 className="text-4xl font-bold text-center mb-4">
+          <span className="gradient-text">Get In Touch</span>
         </h2>
-        <p className="text-gray-400 text-center mb-16 max-w-xl mx-auto">
-          Have a project in mind? Let's talk. I'm available for freelance work
-          and always open to new opportunities.
+        <p className="text-gray-400 text-center mb-16">
+          Have a project in mind? Let's talk.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="flex flex-col gap-8">
-            <div className="flex items-start gap-4">
-              <div className="bg-blue-500 bg-opacity-20 p-3 rounded-lg">
-                <span className="text-blue-400 text-xl">📧</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left Card - Contact Info */}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col gap-8">
+            <div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                Contact Information
+              </h3>
+              <p className="text-gray-400 text-sm">
+                Reach out to me through any of these channels
+              </p>
+            </div>
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <div className="bg-blue-500/20 p-3 rounded-lg">
+                  <FaEnvelope className="text-blue-400 text-xl" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Email</p>
+                  <p className="text-white font-medium">
+                    mahmoudelsharawy92@gmail.com
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-white font-bold mb-1">Email</h3>
-                <p className="text-gray-400">mahmoudelsharawy92@gmail.com</p>
+              <div className="flex items-center gap-4">
+                <div className="bg-blue-500/20 p-3 rounded-lg">
+                  <FaPhone className="text-blue-400 text-xl" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Phone</p>
+                  <p className="text-white font-medium">+201157229382</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="bg-blue-500/20 p-3 rounded-lg">
+                  <FaMapMarkerAlt className="text-blue-400 text-xl" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Location</p>
+                  <p className="text-white font-medium">Alexandria, Egypt</p>
+                </div>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="bg-blue-500 bg-opacity-20 p-3 rounded-lg">
-                <span className="text-blue-400 text-xl">💼</span>
-              </div>
-              <div>
-                <h3 className="text-white font-bold mb-1">Upwork</h3>
-                <p className="text-gray-400">Available for freelance projects</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="bg-blue-500 bg-opacity-20 p-3 rounded-lg">
-                <span className="text-blue-400 text-xl">📍</span>
-              </div>
-              <div>
-                <h3 className="text-white font-bold mb-1">Location</h3>
-                <p className="text-gray-400">Alexandria, Egypt</p>
+            <div>
+              <p className="text-gray-400 text-sm mb-4">Connect with me</p>
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com/MahmoudElsh3rawy"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-white/10 hover:bg-blue-500 p-3 rounded-lg transition-colors"
+                >
+                  <FaGithub className="text-white text-xl" />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/mahmoud-elsharawy-dev"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-white/10 hover:bg-blue-500 p-3 rounded-lg transition-colors"
+                >
+                  <FaLinkedin className="text-white text-xl" />
+                </a>
+
+                <a
+                  href="https://www.upwork.com/freelancers/mahmoudelsharawy"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-white/10 hover:bg-blue-500 p-3 rounded-lg transition-colors"
+                >
+                  <SiUpwork className="text-white text-xl" />
+                </a>
+
+                <a
+                  href="mailto:mahmoudelsharawy92@gmail.com"
+                  className="bg-white/10 hover:bg-blue-500 p-3 rounded-lg transition-colors"
+                >
+                  <FaEnvelope className="text-white text-xl" />
+                </a>
               </div>
             </div>
           </div>
-          <div className="bg-gray-800 rounded-xl p-8">
-            <div className="flex flex-col gap-6">
+
+          {/* Right Card - Form */}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-white mb-2">
+              Send Me a Message
+            </h3>
+            <p className="text-gray-400 text-sm mb-6">
+              I'll get back to you as soon as possible
+            </p>
+            <div className="flex flex-col gap-4">
               <div>
                 <label className="text-gray-400 text-sm mb-2 block">Name</label>
                 <input
@@ -85,29 +148,33 @@ function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your name"
-                  className="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-blue-500 focus:outline-none"
+                  className="w-full bg-white/5 text-white rounded-lg px-4 py-3 border border-white/10 focus:border-blue-500 focus:outline-none"
                 />
               </div>
               <div>
-                <label className="text-gray-400 text-sm mb-2 block">Email</label>
+                <label className="text-gray-400 text-sm mb-2 block">
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your email"
-                  className="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-blue-500 focus:outline-none"
+                  className="w-full bg-white/5 text-white rounded-lg px-4 py-3 border border-white/10 focus:border-blue-500 focus:outline-none"
                 />
               </div>
               <div>
-                <label className="text-gray-400 text-sm mb-2 block">Message</label>
+                <label className="text-gray-400 text-sm mb-2 block">
+                  Message
+                </label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
                   placeholder="Your message"
-                  className="w-full bg-gray-900 text-white rounded-lg px-4 py-3 border border-gray-700 focus:border-blue-500 focus:outline-none resize-none"
+                  className="w-full bg-white/5 text-white rounded-lg px-4 py-3 border border-white/10 focus:border-blue-500 focus:outline-none resize-none"
                 />
               </div>
               {status === 'success' && (
@@ -118,7 +185,7 @@ function Contact() {
               )}
               <button
                 onClick={handleSubmit}
-                className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 rounded-lg transition-colors"
+                className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white font-medium py-3 rounded-lg transition-all"
               >
                 {status === 'sending' ? 'Sending...' : 'Send Message'}
               </button>
