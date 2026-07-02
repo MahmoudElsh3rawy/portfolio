@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import ScrollArrow from './components/ScrollArrow'
 import Services from './components/Services'
 import Experience from './components/Experience'
+import Certifications from './components/Certifications'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Projects />
       <Services />
       <Experience />
+      <Certifications />
       <Contact />
       <Footer />
     </div>

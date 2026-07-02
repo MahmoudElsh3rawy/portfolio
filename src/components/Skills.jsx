@@ -75,8 +75,7 @@ function Skills() {
         <div className="flex flex-col md:flex-row gap-8 items-center mb-16">
           <div className="flex-1">
             <p className="text-2xl font-bold text-white leading-relaxed">
-              I build for the web — Frontend, Backend, and everything in
-              between.
+              From idea to deployment — I build it all.
             </p>
           </div>
           <div className="flex-1">
