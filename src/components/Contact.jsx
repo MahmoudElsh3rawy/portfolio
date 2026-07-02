@@ -1,12 +1,5 @@
 import { useState } from 'react'
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaPhone,
-} from 'react-icons/fa'
-import { SiUpwork } from 'react-icons/si'
+import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaWhatsapp } from 'react-icons/fa'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -41,7 +34,7 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-transparent">
+    <section id="contact" className="py-20 bg-white/5">
       <div className="max-w-4xl mx-auto px-6" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-4">
           <span className="gradient-text">Get In Touch</span>
@@ -60,73 +53,87 @@ function Contact() {
                 Reach out to me through any of these channels
               </p>
             </div>
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-4">
-                <div className="bg-blue-500/20 p-3 rounded-lg">
-                  <FaEnvelope className="text-blue-400 text-xl" />
+            <div className="flex flex-col gap-4">
+              {/* Email */}
+
+              <a
+                href="mailto:mahmoudelsharawy92@gmail.com"
+                className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3 hover:border-blue-500/50 transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-500/20 p-2 rounded-lg">
+                    <FaEnvelope className="text-blue-400 text-lg" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-xs">Email</p>
+                    <p className="text-white text-sm font-medium">
+                      mahmoudelsharawy92@gmail.com
+                    </p>
+                  </div>
+                </div>
+              </a>
+
+              {/* Phone 1 */}
+              <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-500/20 p-2 rounded-lg">
+                    <FaPhone className="text-blue-400 text-lg" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-xs">Primary</p>
+                    <p className="text-white text-sm font-medium">
+                      +201157229382
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href="https://wa.me/201157229382"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1 bg-green-500/20 hover:bg-green-500 text-green-400 hover:text-white text-xs px-3 py-1.5 rounded-lg transition-all"
+                >
+                  <FaWhatsapp className="text-sm" />
+                  WhatsApp
+                </a>
+              </div>
+
+              {/* Phone 2 */}
+              <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-500/20 p-2 rounded-lg">
+                    <FaPhone className="text-blue-400 text-lg" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-xs">Secondary</p>
+                    <p className="text-white text-sm font-medium">
+                      +201226034294
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href="https://wa.me/201226034294"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1 bg-green-500/20 hover:bg-green-500 text-green-400 hover:text-white text-xs px-3 py-1.5 rounded-lg transition-all"
+                >
+                  <FaWhatsapp className="text-sm" />
+                  WhatsApp
+                </a>
+              </div>
+
+              {/* Location */}
+              <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                <div className="bg-blue-500/20 p-2 rounded-lg">
+                  <FaMapMarkerAlt className="text-blue-400 text-lg" />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-sm">Email</p>
-                  <p className="text-white font-medium">
-                    mahmoudelsharawy92@gmail.com
+                  <p className="text-gray-400 text-xs">Location</p>
+                  <p className="text-white text-sm font-medium">
+                    Alexandria, Egypt
                   </p>
                 </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-blue-500/20 p-3 rounded-lg">
-                  <FaPhone className="text-blue-400 text-xl" />
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm">Phone</p>
-                  <p className="text-white font-medium">+201157229382</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-blue-500/20 p-3 rounded-lg">
-                  <FaMapMarkerAlt className="text-blue-400 text-xl" />
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm">Location</p>
-                  <p className="text-white font-medium">Alexandria, Egypt</p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className="text-gray-400 text-sm mb-4">Connect with me</p>
-              <div className="flex gap-4">
-                <a
-                  href="https://github.com/MahmoudElsh3rawy"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-white/10 hover:bg-blue-500 p-3 rounded-lg transition-colors"
-                >
-                  <FaGithub className="text-white text-xl" />
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/mahmoud-elsharawy-dev"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-white/10 hover:bg-blue-500 p-3 rounded-lg transition-colors"
-                >
-                  <FaLinkedin className="text-white text-xl" />
-                </a>
-
-                <a
-                  href="https://www.upwork.com/freelancers/mahmoudelsharawy"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-white/10 hover:bg-blue-500 p-3 rounded-lg transition-colors"
-                >
-                  <SiUpwork className="text-white text-xl" />
-                </a>
-
-                <a
-                  href="mailto:mahmoudelsharawy92@gmail.com"
-                  className="bg-white/10 hover:bg-blue-500 p-3 rounded-lg transition-colors"
-                >
-                  <FaEnvelope className="text-white text-xl" />
-                </a>
               </div>
             </div>
           </div>

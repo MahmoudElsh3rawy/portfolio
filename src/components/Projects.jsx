@@ -1,5 +1,11 @@
 import { useState } from 'react'
 import { FaGithub, FaExternalLinkAlt, FaLock } from 'react-icons/fa'
+import advisorsImg from '../assets/projects/advisors.png'
+import entityImg from '../assets/projects/entity-generator.png'
+import ecommerceImg from '../assets/projects/ecommerce.png'
+import dashboardImg from '../assets/projects/admin-dashboard.png'
+import carServicesImg from '../assets/projects/car-services.png'
+import articlesImg from '../assets/projects/articles.png'
 
 const projects = [
   {
@@ -15,10 +21,10 @@ const projects = [
       'Real-time notifications',
     ],
     tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
-    github: 'https://github.com/MahmoudElsh3rawy',
-    live: null,
+    github: null,
+    live: 'https://advisors.startupkit.io/',
     private: false,
-    icon: '🌐',
+    image: advisorsImg,
   },
   {
     id: 2,
@@ -36,7 +42,7 @@ const projects = [
     github: null,
     live: null,
     private: true,
-    icon: '⚙️',
+    image: entityImg,
   },
   {
     id: 3,
@@ -51,10 +57,10 @@ const projects = [
       'Responsive design',
     ],
     tech: ['React.js', 'Node.js', 'MongoDB'],
-    github: 'https://github.com/MahmoudElsh3rawy',
-    live: null,
+    github: 'https://github.com/MahmoudElsh3rawy/ecommerce-store',
+    live: 'https://janelle-eg.com/',
     private: false,
-    icon: '🛒',
+    image: ecommerceImg,
   },
   {
     id: 4,
@@ -69,10 +75,10 @@ const projects = [
       'Service tracking',
     ],
     tech: ['React.js', 'Node.js'],
-    github: 'https://github.com/MahmoudElsh3rawy',
+    github: 'https://github.com/MahmoudElsh3rawy/Car-Tech-TeamB',
     live: null,
     private: false,
-    icon: '📊',
+    image: dashboardImg,
   },
   {
     id: 5,
@@ -87,10 +93,10 @@ const projects = [
       'Responsive UI',
     ],
     tech: ['React.js', 'Node.js', 'MongoDB'],
-    github: 'https://github.com/MahmoudElsh3rawy',
+    github: 'https://github.com/MahmoudElsh3rawy/Car-Tech-TeamB',
     live: null,
     private: false,
-    icon: '🚗',
+    image: carServicesImg,
   },
   {
     id: 6,
@@ -105,10 +111,10 @@ const projects = [
       'Clean admin interface',
     ],
     tech: ['React.js', 'Node.js'],
-    github: 'https://github.com/MahmoudElsh3rawy',
+    github: 'https://github.com/MahmoudElsh3rawy/Articles',
     live: null,
     private: false,
-    icon: '📝',
+    image: articlesImg,
   },
 ]
 
@@ -142,12 +148,12 @@ function Projects() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-          <div className="bg-white/5 flex flex-col items-center justify-center p-12 gap-4">
-            <div className="text-8xl">{activeProject.icon}</div>
-            <h3 className="text-white font-bold text-xl">
-              {activeProject.title}
-            </h3>
-            <p className="text-gray-400 text-sm">{activeProject.subtitle}</p>
+          <div className="bg-white flex items-center justify-center overflow-hidden h-full min-h-80">
+            <img
+              src={activeProject.image}
+              alt={activeProject.title}
+              className="w-full h-full object-contain"
+            />
           </div>
           <div className="p-8 flex flex-col gap-6">
             <div>
@@ -188,7 +194,7 @@ function Projects() {
                 <span className="flex items-center gap-2 text-gray-500 text-sm">
                   <FaLock /> Private Repository
                 </span>
-              ) : (
+              ) : activeProject.github ? (
                 <a
                   href={activeProject.github}
                   target="_blank"
@@ -197,7 +203,7 @@ function Projects() {
                 >
                   <FaGithub /> View on GitHub
                 </a>
-              )}
+              ) : null}
               {activeProject.live && (
                 <a
                   href={activeProject.live}

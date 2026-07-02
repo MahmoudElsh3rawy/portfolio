@@ -4,12 +4,12 @@ import { FaReact, FaNodeJs } from 'react-icons/fa'
 import { SiMongodb, SiNextdotjs } from 'react-icons/si'
 
 const sentences = [
-  'Full Stack Web Developer',
   'Clean & Scalable Code',
-  'React.js & Node.js Expert',
   'On-time Project Delivery',
   'Design & craft beautiful websites',
-  'That solve your business problems',
+  'Solutions for your business problems',
+  'Perfect UI Design',
+  'Robust Backend APIs',
 ]
 
 function Hero() {
@@ -67,8 +67,9 @@ function Hero() {
             <span className="text-blue-400 animate-pulse">|</span>
           </div>
           <p className="text-gray-400 text-lg mb-8 max-w-lg">
-            A Web Developer who builds fast, clean, and user-friendly
-            applications — from landing pages to full stack platforms.
+            A Full Stack Web Developer with a passion for building fast, clean,
+            and user-friendly applications — from landing pages to complete full
+            stack platforms.
           </p>
           <div className="flex gap-4">
             <a

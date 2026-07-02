@@ -8,7 +8,7 @@ function About() {
         <div className="flex flex-col gap-8">
           <div>
             <h3 className="text-2xl font-bold text-white mb-4">
-              I build things for the web — and I build them right.
+              From idea to deployment — I build it all.
             </h3>
             <p className="text-gray-300 text-lg leading-relaxed mb-4">
               I'm a Full Stack Developer with 3+ years of experience turning

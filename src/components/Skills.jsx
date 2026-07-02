@@ -2,7 +2,6 @@ import {
   FaReact,
   FaNodeJs,
   FaGitAlt,
-  FaGithub,
   FaCss3Alt,
   FaJava,
   FaDocker,
@@ -55,7 +54,6 @@ const skillCategories = [
     title: 'Tools',
     skills: [
       { name: 'Git', icon: FaGitAlt, color: 'text-orange-500' },
-      { name: 'GitHub', icon: FaGithub, color: 'text-white' },
       { name: 'VS Code', icon: VscVscode, color: 'text-blue-400' },
       { name: 'Postman', icon: SiPostman, color: 'text-orange-400' },
       { name: 'npm', icon: SiNpm, color: 'text-red-400' },
@@ -75,16 +73,16 @@ function Skills() {
         <div className="flex flex-col md:flex-row gap-8 items-center mb-16">
           <div className="flex-1">
             <p className="text-2xl font-bold text-white leading-relaxed">
-              From idea to deployment — I build it all.
+              Frontend, Backend, and everything in between.
             </p>
           </div>
           <div className="flex-1">
             <p className="text-gray-400 leading-relaxed">
-              My go-to stack is the MERN Stack with TypeScript and Tailwind CSS.
-              I've worked across different technologies including Java, Spring
-              Boot, and PHP — which gives me the flexibility to adapt to any
-              project's needs. I care about writing clean, maintainable code and
-              building interfaces that are both functional and visually
+              I mainly work with the MERN Stack with TypeScript and Tailwind
+              CSS. I've worked across different technologies including Java,
+              Spring Boot, and PHP — which gives me the flexibility to adapt to
+              any project's needs. I care about writing clean, maintainable code
+              and building interfaces that are both functional and visually
               appealing.
             </p>
           </div>

@@ -1,15 +1,47 @@
-import { FaExternalLinkAlt } from 'react-icons/fa'
-import { SiHackerrank, SiLeetcode, SiGeeksforgeeks } from 'react-icons/si'
+import { FaExternalLinkAlt, FaGithub, FaLinkedin } from 'react-icons/fa'
+import {
+  SiHackerrank,
+  SiLeetcode,
+  SiGeeksforgeeks,
+  SiUpwork,
+} from 'react-icons/si'
 
 const profiles = [
+  {
+    name: 'GitHub',
+    icon: FaGithub,
+    color: 'text-white',
+    bg: 'bg-white/10',
+    border: 'hover:border-white/50',
+    url: 'https://github.com/MahmoudElsh3rawy',
+    description: 'My code & open source work',
+  },
+  {
+    name: 'Upwork',
+    icon: SiUpwork,
+    color: 'text-green-400',
+    bg: 'bg-green-500/10',
+    border: 'hover:border-green-500/50',
+    url: 'https://www.upwork.com/freelancers/mahmoudelsharawy',
+    description: 'My freelance work & reviews',
+  },
+  {
+    name: 'LinkedIn',
+    icon: FaLinkedin,
+    color: 'text-blue-400',
+    bg: 'bg-blue-500/10',
+    border: 'hover:border-blue-500/50',
+    url: 'https://www.linkedin.com/in/mahmoud-elsharawy-dev',
+    description: 'My professional profile',
+  },
   {
     name: 'HackerRank',
     icon: SiHackerrank,
     color: 'text-green-400',
     bg: 'bg-green-500/10',
     border: 'hover:border-green-500/50',
-    url: 'https://www.hackerrank.com/profile/Mahmoudelsharaw1',
-    description: 'Problem solving & coding challenges',
+    url: 'https://www.hackerrank.com/profile/mahmoudelsharawy',
+    description: 'Problem solving & challenges',
   },
   {
     name: 'LeetCode',
@@ -17,7 +49,7 @@ const profiles = [
     color: 'text-orange-400',
     bg: 'bg-orange-500/10',
     border: 'hover:border-orange-500/50',
-    url: 'https://leetcode.com/u/mahmoudelsharawy92/',
+    url: 'https://leetcode.com/mahmoudelsharawy',
     description: 'Algorithms & data structures',
   },
   {
@@ -26,19 +58,19 @@ const profiles = [
     color: 'text-green-500',
     bg: 'bg-green-500/10',
     border: 'hover:border-green-500/50',
-    url: 'https://www.geeksforgeeks.org/profile/mahmoudelsharawy92',
+    url: 'https://www.geeksforgeeks.org/user/mahmoudelsharawy',
     description: 'CS fundamentals & practice',
   },
 ]
 
 function Certifications() {
   return (
-    <section id="certifications" className="py-20 bg-white/5">
-      <div className="max-w-4xl mx-auto px-6" data-aos="fade-up">
+    <section id="certifications" className="py-20 bg-transparent">
+      <div className="max-w-5xl mx-auto px-6" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-16">
-          <span className="gradient-text">Profiles & Problem Solving</span>
+          <span className="gradient-text">Profiles & Links</span>
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
           {profiles.map((profile) => (
             <a
               key={profile.name}
