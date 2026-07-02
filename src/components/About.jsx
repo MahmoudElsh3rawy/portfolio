@@ -50,7 +50,7 @@ function About() {
             </a>
 
             <a
-              href="/cv.pdf"
+              href="/MahmoudElsharawyCV.pdf"
               download
               className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-all hover:scale-105"
             >
