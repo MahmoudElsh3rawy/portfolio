@@ -34,7 +34,7 @@ npm run dev
 
 ## 📸 Preview
 
-![Portfolio Preview](https://i.postimg.cc/52kH0rsW/Capture3.jpg)
+![Portfolio Preview](https://i.postimg.cc/3xRhdQdM/1.jpg)
 
 ## 📬 Contact
 
