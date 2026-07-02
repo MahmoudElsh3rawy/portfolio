@@ -38,7 +38,7 @@ function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-white/5">
-      <div className="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-4">
           <span className="gradient-text">Get In Touch</span>
         </h2>
@@ -47,7 +47,7 @@ function Contact() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Card - Contact Info */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col gap-8">
+          <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col gap-8">
             <div>
               <h3 className="text-xl font-bold text-white mb-2">
                 Contact Information
@@ -63,13 +63,13 @@ function Contact() {
                 href="mailto:mahmoudelsharawy92@gmail.com"
                 className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3 hover:border-blue-500/50 transition-all"
               >
-                <div className="flex items-center gap-3">
-                  <div className="bg-blue-500/20 p-2 rounded-lg">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="bg-blue-500/20 p-2 rounded-lg flex-shrink-0">
                     <FaEnvelope className="text-blue-400 text-lg" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-gray-400 text-xs">Email</p>
-                    <p className="text-white text-sm font-medium">
+                    <p className="text-white text-sm font-medium truncate">
                       mahmoudelsharawy92@gmail.com
                     </p>
                   </div>
@@ -77,12 +77,12 @@ function Contact() {
               </a>
 
               {/* Phone 1 */}
-              <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3">
-                <div className="flex items-center gap-3">
-                  <div className="bg-blue-500/20 p-2 rounded-lg">
+              <div className="flex flex-wrap items-center justify-between gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="bg-blue-500/20 p-2 rounded-lg flex-shrink-0">
                     <FaPhone className="text-blue-400 text-lg" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-gray-400 text-xs">Primary</p>
                     <p className="text-white text-sm font-medium">
                       +201157229382
@@ -94,7 +94,7 @@ function Contact() {
                   href="https://wa.me/201157229382"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1 bg-green-500/20 hover:bg-green-500 text-green-400 hover:text-white text-xs px-3 py-1.5 rounded-lg transition-all"
+                  className="flex-shrink-0 flex items-center gap-1 bg-green-500/20 hover:bg-green-500 text-green-400 hover:text-white text-xs px-2 sm:px-3 py-1.5 rounded-lg transition-all"
                 >
                   <FaWhatsapp className="text-sm" />
                   WhatsApp
@@ -102,12 +102,12 @@ function Contact() {
               </div>
 
               {/* Phone 2 */}
-              <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3">
-                <div className="flex items-center gap-3">
-                  <div className="bg-blue-500/20 p-2 rounded-lg">
+              <div className="flex flex-wrap items-center justify-between gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="bg-blue-500/20 p-2 rounded-lg flex-shrink-0">
                     <FaPhone className="text-blue-400 text-lg" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-gray-400 text-xs">Secondary</p>
                     <p className="text-white text-sm font-medium">
                       +201226034294
@@ -119,7 +119,7 @@ function Contact() {
                   href="https://wa.me/201226034294"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1 bg-green-500/20 hover:bg-green-500 text-green-400 hover:text-white text-xs px-3 py-1.5 rounded-lg transition-all"
+                  className="flex-shrink-0 flex items-center gap-1 bg-green-500/20 hover:bg-green-500 text-green-400 hover:text-white text-xs px-2 sm:px-3 py-1.5 rounded-lg transition-all"
                 >
                   <FaWhatsapp className="text-sm" />
                   WhatsApp

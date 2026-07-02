@@ -48,17 +48,17 @@ function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 relative overflow-hidden"
+      className="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 relative overflow-hidden pt-28 pb-12 md:pt-20 md:pb-0"
     >
-      <div className="max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left Side */}
         <div className="flex-1 text-left">
           <div className="mb-4">
             <span className="text-blue-400 text-sm font-medium tracking-widest uppercase">
-              Hello our valued customers
+              Welcome
             </span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
             <span className="text-white">I'm Mahmoud </span>
             <span className="text-blue-400">Elsharawy</span>
           </h1>
@@ -71,7 +71,7 @@ function Hero() {
             and user-friendly applications — from landing pages to complete full
             stack platforms.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <a
               href="#contact"
               className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-4 py-2 rounded-lg font-bold transition-all hover:scale-105"
@@ -89,8 +89,8 @@ function Hero() {
         </div>
 
         {/* Right Side - Image */}
-        <div className="relative flex-shrink-0">
-          <div className="relative w-72 h-72 md:w-80 md:h-80">
+        <div className="relative flex-shrink-0 max-w-full">
+          <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto">
             <div
               className="absolute inset-0 rounded-full border-2 border-dashed border-blue-500 opacity-30 animate-spin"
               style={{ animationDuration: '20s' }}
@@ -104,18 +104,18 @@ function Hero() {
             </div>
             <div className="absolute -top-2 left-0 bg-gray-800 border border-blue-500 p-2 rounded-full">
               <FaReact
-                className="text-blue-400 text-2xl animate-spin"
+                className="text-blue-400 text-xl sm:text-2xl animate-spin"
                 style={{ animationDuration: '8s' }}
               />
             </div>
-            <div className="absolute top-1/2 -right-8 bg-gray-800 border border-white p-2 rounded-full">
-              <SiNextdotjs className="text-white text-2xl" />
+            <div className="absolute top-1/2 -right-1 sm:-right-8 bg-gray-800 border border-white p-2 rounded-full">
+              <SiNextdotjs className="text-white text-xl sm:text-2xl" />
             </div>
-            <div className="absolute -bottom-2 -left-2 bg-gray-800 border border-green-500 p-2 rounded-full">
-              <FaNodeJs className="text-green-400 text-2xl" />
+            <div className="absolute -bottom-2 -left-1 sm:-left-2 bg-gray-800 border border-green-500 p-2 rounded-full">
+              <FaNodeJs className="text-green-400 text-xl sm:text-2xl" />
             </div>
             <div className="absolute -top-2 right-0 bg-gray-800 border border-green-700 p-2 rounded-full">
-              <SiMongodb className="text-green-500 text-2xl" />
+              <SiMongodb className="text-green-500 text-xl sm:text-2xl" />
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 function About() {
   return (
     <section id="about" className="py-20 bg-white/5">
-      <div className="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-16">
           <span className="gradient-text">About Me</span>
         </h2>
@@ -25,26 +25,26 @@ function About() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6">
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-blue-500/50 transition-all">
-              <span className="text-4xl font-bold gradient-text">3+</span>
-              <p className="text-gray-400 mt-2">Years Experience</p>
+          <div className="grid grid-cols-3 gap-2 sm:gap-6">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-2 sm:p-6 text-center hover:border-blue-500/50 transition-all">
+              <span className="text-xl sm:text-4xl font-bold gradient-text">3+</span>
+              <p className="text-gray-400 text-xs sm:text-base mt-1 sm:mt-2">Years Experience</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-blue-500/50 transition-all">
-              <span className="text-4xl font-bold gradient-text">5+</span>
-              <p className="text-gray-400 mt-2">Projects Completed</p>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-2 sm:p-6 text-center hover:border-blue-500/50 transition-all">
+              <span className="text-xl sm:text-4xl font-bold gradient-text">5+</span>
+              <p className="text-gray-400 text-xs sm:text-base mt-1 sm:mt-2">Projects Completed</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-blue-500/50 transition-all">
-              <span className="text-4xl font-bold gradient-text">3+</span>
-              <p className="text-gray-400 mt-2">Happy Clients</p>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-2 sm:p-6 text-center hover:border-blue-500/50 transition-all">
+              <span className="text-xl sm:text-4xl font-bold gradient-text">3+</span>
+              <p className="text-gray-400 text-xs sm:text-base mt-1 sm:mt-2">Happy Clients</p>
             </div>
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#projects"
-              className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-all hover:scale-105"
+              className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-all hover:scale-105 text-center"
             >
               See My Work
             </a>
@@ -52,7 +52,7 @@ function About() {
             <a
               href="/MahmoudElsharawyCV.pdf"
               download
-              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-all hover:scale-105"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-all hover:scale-105 text-center"
             >
               Download CV
             </a>

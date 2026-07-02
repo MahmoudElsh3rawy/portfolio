@@ -124,18 +124,18 @@ function Projects() {
 
   return (
     <section id="projects" className="py-20 bg-white/5">
-      <div className="max-w-6xl mx-auto px-6" data-aos="fade-up">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-16">
           <span className="gradient-text">My Projects</span>
         </h2>
 
-        <div className="relative flex items-center mb-8">
-          <div className="flex w-full border border-white/10 rounded-xl overflow-hidden">
+        <div className="relative flex items-center mb-8 min-w-0">
+          <div className="flex w-full min-w-0 border border-white/10 rounded-xl overflow-x-auto md:overflow-hidden">
             {projects.map((project, index) => (
               <button
                 key={project.id}
                 onClick={() => setActiveIndex(index)}
-                className={`flex-1 py-3 px-2 text-sm transition-all border-r border-white/10 last:border-r-0 ${
+                className={`flex-1 min-w-max md:min-w-0 py-3 px-4 md:px-2 text-sm whitespace-nowrap transition-all border-r border-white/10 last:border-r-0 ${
                   activeIndex === index
                     ? 'bg-blue-500/20 text-blue-400 font-medium'
                     : 'text-gray-400 hover:text-white hover:bg-white/5'
