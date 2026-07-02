@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio website built with React.js and Vite.
 
-🔗 Live Demo: Coming Soon
+🔗 Live Demo: https://mahmoudelsharawy.vercel.app
 
 ## ✨ Sections
 
@@ -34,7 +34,7 @@ npm run dev
 
 ## 📸 Preview
 
-Coming Soon
+![Portfolio Preview](https://i.postimg.cc/52kH0rsW/Capture3.jpg)
 
 ## 📬 Contact
 
