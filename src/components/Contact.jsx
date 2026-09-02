@@ -85,7 +85,7 @@ function Contact() {
                   <div className="min-w-0">
                     <p className="text-gray-400 text-xs">Primary</p>
                     <p className="text-white text-sm font-medium">
-                      +201157229382
+                      +201226034294
                     </p>
                   </div>
                 </div>
@@ -110,20 +110,10 @@ function Contact() {
                   <div className="min-w-0">
                     <p className="text-gray-400 text-xs">Secondary</p>
                     <p className="text-white text-sm font-medium">
-                      +201226034294
+                      +201157229382
                     </p>
                   </div>
                 </div>
-
-                <a
-                  href="https://wa.me/201226034294"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex-shrink-0 flex items-center gap-1 bg-green-500/20 hover:bg-green-500 text-green-400 hover:text-white text-xs px-2 sm:px-3 py-1.5 rounded-lg transition-all"
-                >
-                  <FaWhatsapp className="text-sm" />
-                  WhatsApp
-                </a>
               </div>
 
               {/* Location */}
