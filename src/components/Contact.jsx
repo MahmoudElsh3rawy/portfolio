@@ -64,7 +64,7 @@ function Contact() {
                 className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3 hover:border-blue-500/50 transition-all"
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="bg-blue-500/20 p-2 rounded-lg flex-shrink-0">
+                  <div className="bg-blue-500/20 p-2 rounded-lg shrink-0">
                     <FaEnvelope className="text-blue-400 text-lg" />
                   </div>
                   <div className="min-w-0">
@@ -79,7 +79,7 @@ function Contact() {
               {/* Phone 1 */}
               <div className="flex flex-wrap items-center justify-between gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="bg-blue-500/20 p-2 rounded-lg flex-shrink-0">
+                  <div className="bg-blue-500/20 p-2 rounded-lg shrink-0">
                     <FaPhone className="text-blue-400 text-lg" />
                   </div>
                   <div className="min-w-0">
@@ -91,10 +91,10 @@ function Contact() {
                 </div>
 
                 <a
-                  href="https://wa.me/201157229382"
+                  href="https://wa.me/201226034294"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-shrink-0 flex items-center gap-1 bg-green-500/20 hover:bg-green-500 text-green-400 hover:text-white text-xs px-2 sm:px-3 py-1.5 rounded-lg transition-all"
+                  className="shrink-0 flex items-center gap-1 bg-green-500/20 hover:bg-green-500 text-green-400 hover:text-white text-xs px-2 sm:px-3 py-1.5 rounded-lg transition-all"
                 >
                   <FaWhatsapp className="text-sm" />
                   WhatsApp
@@ -104,7 +104,7 @@ function Contact() {
               {/* Phone 2 */}
               <div className="flex flex-wrap items-center justify-between gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="bg-blue-500/20 p-2 rounded-lg flex-shrink-0">
+                  <div className="bg-blue-500/20 p-2 rounded-lg shrink-0">
                     <FaPhone className="text-blue-400 text-lg" />
                   </div>
                   <div className="min-w-0">
