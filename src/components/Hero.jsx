@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import profileImg from '../assets/profile.jpg'
+import profileImg from '../assets/profile.webp'
 import { FaReact, FaNodeJs } from 'react-icons/fa'
 import { SiMongodb, SiNextdotjs } from 'react-icons/si'
 
