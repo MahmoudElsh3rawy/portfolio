@@ -22,8 +22,10 @@ function ScrollArrow() {
   return (
     <>
       {/* Down Arrow - Hero Section */}
-      <div
+      <button
+        type="button"
         onClick={scrollToAbout}
+        aria-label="Scroll to About section"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer animate-bounce text-blue-400"
       >
         <svg
@@ -38,12 +40,14 @@ function ScrollArrow() {
         >
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
-      </div>
+      </button>
 
       {/* Scroll To Top - Fixed Button */}
       {showTop && (
         <button
+          type="button"
           onClick={scrollToTop}
+          aria-label="Scroll to top"
           className="fixed bottom-8 right-8 z-50 bg-blue-500 hover:bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
         >
           ↑
