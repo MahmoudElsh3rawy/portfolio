@@ -6,7 +6,9 @@ const links = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
+  { id: 'services', label: 'Services' },
   { id: 'experience', label: 'Experience' },
+  { id: 'certifications', label: 'Profiles' },
   { id: 'contact', label: 'Contact', special: true },
 ]
 
@@ -45,7 +47,7 @@ function Navbar() {
             ME
           </span>
         </a>
-        <ul className="hidden md:flex gap-8">
+        <ul className="hidden lg:flex gap-8">
           {links.map((link) => (
             <li key={link.id}>
               <a
@@ -64,7 +66,7 @@ function Navbar() {
           ))}
         </ul>
         <button
-          className="md:hidden text-gray-300 hover:text-white text-2xl p-1"
+          className="lg:hidden text-gray-300 hover:text-white text-2xl p-1"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
@@ -72,7 +74,7 @@ function Navbar() {
         </button>
       </div>
       <ul
-        className={`md:hidden flex flex-col gap-1 px-4 sm:px-6 overflow-hidden transition-all duration-300 ${
+        className={`lg:hidden flex flex-col gap-1 px-4 sm:px-6 overflow-hidden transition-all duration-300 ${
           isOpen ? 'max-h-96 py-4 border-t border-gray-800' : 'max-h-0'
         }`}
       >
