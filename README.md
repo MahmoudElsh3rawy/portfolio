@@ -39,5 +39,5 @@ npm run dev
 
 ## 📬 Contact
 
-- LinkedIn: https://www.linkedin.com/in/mahmoud-elsharawy-266aa4136/
+- LinkedIn: https://www.linkedin.com/in/mahmoud-elsharawy-dev
 - Email: mahmoudelsharawy92@gmail.com
