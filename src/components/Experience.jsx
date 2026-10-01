@@ -60,7 +60,7 @@ function Experience() {
           {experiences.map((exp, index) => (
             <div key={index} className="relative flex gap-6">
               <div className="flex flex-col items-center">
-                <div className="w-3 h-3 rounded-full bg-blue-400 mt-1 flex-shrink-0"></div>
+                <div className="w-3 h-3 rounded-full bg-blue-400 mt-1 shrink-0"></div>
                 {index < experiences.length - 1 && (
                   <div className="w-px flex-1 bg-white/10 mt-2"></div>
                 )}
@@ -87,7 +87,7 @@ function Experience() {
           {education.map((edu, index) => (
             <div key={index} className="relative flex gap-6">
               <div className="flex flex-col items-center">
-                <div className="w-3 h-3 rounded-full bg-blue-400 mt-1 flex-shrink-0"></div>
+                <div className="w-3 h-3 rounded-full bg-blue-400 mt-1 shrink-0"></div>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex-1 hover:border-blue-500/50 transition-all">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">

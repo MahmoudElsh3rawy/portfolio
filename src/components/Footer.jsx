@@ -13,7 +13,7 @@ function Footer() {
         </div>
         <div className="border-t border-white/10 mt-8 pt-6 text-center">
           <p className="text-gray-500 text-sm">
-            © 2026 Mahmoud Elsharawy. All rights reserved.
+            © {new Date().getFullYear()} Mahmoud Elsharawy. All rights reserved.
           </p>
         </div>
       </div>

@@ -15,6 +15,7 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (status === 'sending') return
     setStatus('sending')
     try {
       const response = await fetch(
@@ -139,12 +140,19 @@ function Contact() {
             <p className="text-gray-400 text-sm mb-6">
               I'll get back to you as soon as possible
             </p>
-            <div className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div>
-                <label className="text-gray-400 text-sm mb-2 block">Name</label>
+                <label
+                  htmlFor="contact-name"
+                  className="text-gray-400 text-sm mb-2 block"
+                >
+                  Name
+                </label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
+                  required
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your name"
@@ -152,12 +160,17 @@ function Contact() {
                 />
               </div>
               <div>
-                <label className="text-gray-400 text-sm mb-2 block">
+                <label
+                  htmlFor="contact-email"
+                  className="text-gray-400 text-sm mb-2 block"
+                >
                   Email
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   name="email"
+                  required
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your email"
@@ -165,11 +178,16 @@ function Contact() {
                 />
               </div>
               <div>
-                <label className="text-gray-400 text-sm mb-2 block">
+                <label
+                  htmlFor="contact-message"
+                  className="text-gray-400 text-sm mb-2 block"
+                >
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
+                  required
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
@@ -177,6 +195,12 @@ function Contact() {
                   className="w-full bg-white/5 text-white rounded-lg px-4 py-3 border border-white/10 focus:border-blue-500 focus:outline-none resize-none"
                 />
               </div>
+              {status === 'sending' && (
+                <p className="text-gray-400 text-sm">
+                  The server may take up to a minute to wake up on the first
+                  message — please keep this page open.
+                </p>
+              )}
               {status === 'success' && (
                 <p className="text-green-400">Message sent successfully!</p>
               )}
@@ -184,12 +208,13 @@ function Contact() {
                 <p className="text-red-400">Something went wrong. Try again.</p>
               )}
               <button
-                onClick={handleSubmit}
-                className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white font-medium py-3 rounded-lg transition-all"
+                type="submit"
+                disabled={status === 'sending'}
+                className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white font-medium py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-blue-400"
               >
                 {status === 'sending' ? 'Sending...' : 'Send Message'}
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
