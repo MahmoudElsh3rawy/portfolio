@@ -89,7 +89,7 @@ function Hero() {
         </div>
 
         {/* Right Side - Image */}
-        <div className="relative flex-shrink-0 max-w-full">
+        <div className="relative shrink-0 max-w-full">
           <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto">
             <div
               className="absolute inset-0 rounded-full border-2 border-dashed border-blue-500 opacity-30 animate-spin"
