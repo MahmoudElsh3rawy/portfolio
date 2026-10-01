@@ -11,7 +11,8 @@ A modern, responsive personal portfolio website built with React.js and Vite.
 - 🛠️ Skills — Tech stack and tools
 - 💼 Projects — Featured work and case studies
 - 🔧 Services — What I offer
-- 📋 Experience — Work history
+- 📋 Experience — Work history & education
+- 🔗 Profiles — GitHub, Upwork, LinkedIn & problem-solving profiles
 - 📬 Contact — Get in touch form
 
 ## 🛠️ Tech Stack
