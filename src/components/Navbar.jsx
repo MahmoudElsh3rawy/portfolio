@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 const links = [
-  { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
@@ -28,8 +27,10 @@ function Navbar() {
       { threshold: 0.3, rootMargin: '-10% 0px -60% 0px' }
     )
 
-    links.forEach((link) => {
-      const el = document.getElementById(link.id)
+    // Also watch the hero so no link stays highlighted after scrolling back to the top
+    const sectionIds = ['home', ...links.map((link) => link.id)]
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
       if (el) observer.observe(el)
     })
 
@@ -39,7 +40,13 @@ function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2">
+        <a
+          href="#home"
+          onClick={() => setIsOpen(false)}
+          aria-label="Back to top"
+          title="Back to top"
+          className="flex items-center gap-2"
+        >
           <span
             className="text-blue-400 text-3xl"
             style={{ fontFamily: 'Pacifico, cursive' }}
