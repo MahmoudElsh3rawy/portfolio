@@ -10,6 +10,7 @@ A modern, responsive personal portfolio website built with React.js and Vite.
 - 👤 About — Background and personal info
 - 🛠️ Skills — Tech stack and tools
 - 💼 Projects — Featured work and case studies
+- ⭐ Testimonials — Client reviews from Upwork
 - 🔧 Services — What I offer
 - 📋 Experience — Work history & education
 - 🔗 Profiles — GitHub, Upwork, LinkedIn & problem-solving profiles
@@ -22,9 +23,11 @@ A modern, responsive personal portfolio website built with React.js and Vite.
 - Tailwind CSS
 - AOS Animations
 - React Icons
+- Vercel Web Analytics
 - Node.js & Express (Backend)
 - MongoDB Atlas (Database)
 - Nodemailer (Contact Form)
+- GitHub Actions (CI: lint & build on every PR)
 
 ## 🚀 Getting Started
 
