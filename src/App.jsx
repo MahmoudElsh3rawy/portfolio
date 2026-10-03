@@ -14,17 +14,19 @@ function App() {
   return (
     <div>
       <Navbar />
-      <div className="relative">
-        <Hero />
-        <ScrollArrow />
-      </div>
-      <About />
-      <Skills />
-      <Projects />
-      <Services />
-      <Experience />
-      <Certifications />
-      <Contact />
+      <main>
+        <div className="relative">
+          <Hero />
+          <ScrollArrow />
+        </div>
+        <About />
+        <Skills />
+        <Projects />
+        <Services />
+        <Experience />
+        <Certifications />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )
