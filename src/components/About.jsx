@@ -31,7 +31,7 @@ function About() {
               <p className="text-gray-400 text-xs sm:text-base mt-1 sm:mt-2">Years Experience</p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-xl p-2 sm:p-6 text-center hover:border-blue-500/50 transition-all">
-              <span className="text-xl sm:text-4xl font-bold gradient-text">5+</span>
+              <span className="text-xl sm:text-4xl font-bold gradient-text">6+</span>
               <p className="text-gray-400 text-xs sm:text-base mt-1 sm:mt-2">Projects Completed</p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-xl p-2 sm:p-6 text-center hover:border-blue-500/50 transition-all">
