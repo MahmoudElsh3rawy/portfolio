@@ -87,7 +87,33 @@ function Skills() {
             </p>
           </div>
         </div>
-        <div className="overflow-x-auto">
+        {/* Mobile: one card per category */}
+        <div className="flex flex-col gap-4 md:hidden">
+          {skillCategories.map((category) => (
+            <div
+              key={category.title}
+              className="bg-white/5 border border-white/10 rounded-2xl p-5"
+            >
+              <h3 className="gradient-text text-lg font-bold mb-4">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5"
+                  >
+                    <skill.icon className={`text-lg ${skill.color}`} />
+                    <span className="text-gray-300 text-sm">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: table */}
+        <div className="hidden md:block">
           <table className="w-full">
             <thead>
               <tr>
