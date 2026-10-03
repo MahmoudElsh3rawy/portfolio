@@ -65,7 +65,7 @@ const profiles = [
 
 function Certifications() {
   return (
-    <section id="certifications" className="py-20 bg-transparent">
+    <section id="certifications" className="py-20 bg-white/5">
       <div className="max-w-5xl mx-auto px-4 sm:px-6" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-16">
           <span className="gradient-text">Profiles & Links</span>

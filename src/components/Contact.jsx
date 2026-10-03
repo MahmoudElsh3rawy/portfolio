@@ -38,7 +38,7 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-white/5">
+    <section id="contact" className="py-20 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-4">
           <span className="gradient-text">Get In Touch</span>
