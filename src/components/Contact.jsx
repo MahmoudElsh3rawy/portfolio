@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaWhatsapp } from 'react-icons/fa'
 
+const API_URL =
+  import.meta.env.VITE_API_URL || 'https://portfolio-backend-fryj.onrender.com'
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,14 +21,11 @@ function Contact() {
     if (status === 'sending') return
     setStatus('sending')
     try {
-      const response = await fetch(
-        'https://portfolio-backend-fryj.onrender.com/api/contact',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        }
-      )
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
       if (response.ok) {
         setStatus('success')
         setFormData({ name: '', email: '', message: '' })

@@ -33,6 +33,8 @@ npm install
 npm run dev
 ```
 
+To point the contact form at a different backend (e.g. a local server), copy `.env.example` to `.env` and set `VITE_API_URL`.
+
 ## 📸 Preview
 
 ![Portfolio Preview](https://i.postimg.cc/3xRhdQdM/1.jpg)
