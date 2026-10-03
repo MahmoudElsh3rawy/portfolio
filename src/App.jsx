@@ -9,6 +9,7 @@ import ScrollArrow from './components/ScrollArrow'
 import Services from './components/Services'
 import Experience from './components/Experience'
 import Certifications from './components/Certifications'
+import Testimonials from './components/Testimonials'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <Testimonials />
         <Services />
         <Experience />
         <Certifications />
