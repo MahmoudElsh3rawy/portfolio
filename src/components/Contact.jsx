@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaWhatsapp } from 'react-icons/fa'
 
-const API_URL =
-  import.meta.env.VITE_API_URL || 'https://portfolio-backend-fryj.onrender.com'
+// Same-origin Vercel function (api/contact.js) unless overridden for local dev
+const API_URL = import.meta.env.VITE_API_URL || ''
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -195,12 +195,6 @@ function Contact() {
                   className="w-full bg-white/5 text-white rounded-lg px-4 py-3 border border-white/10 focus:border-blue-500 focus:outline-none resize-none"
                 />
               </div>
-              {status === 'sending' && (
-                <p className="text-gray-400 text-sm">
-                  The server may take up to a minute to wake up on the first
-                  message — please keep this page open.
-                </p>
-              )}
               {status === 'success' && (
                 <p className="text-green-400">Message sent successfully!</p>
               )}
