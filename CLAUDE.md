@@ -55,6 +55,11 @@ something here changes.
   "امسح الرمز للتواصل معي ومشاهدة أعمالي" (formal Arabic, no colloquial copy).
 - Navbar: no Home link (logo scrolls to top), no Reviews link.
 
+- Advisors Platform: the client took advisors.startupkit.io down and he can't
+  reach the client. The live link is removed (portfolio shows "Private
+  Repository"; the /card tile links to `/#projects`). He is looking for a
+  video, screenshots or the code to build a case study / own demo instead.
+
 ## Pending (deferred by him, in this order)
 
 1. **Domain** — he wants advice choosing one. After buying: connect it in
