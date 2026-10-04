@@ -22,8 +22,9 @@ const projects = [
     ],
     tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
     github: null,
-    live: 'https://advisors.startupkit.io/',
-    private: false,
+    // The client took the live site down, so there's no demo link
+    live: null,
+    private: true,
     image: advisorsImg,
   },
   {
