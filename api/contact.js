@@ -1,19 +1,11 @@
 // Vercel serverless function for the contact form: stores the message in
 // MongoDB and emails it via Resend. Needs MONGODB_URI and RESEND_API_KEY.
-import { MongoClient } from 'mongodb'
 import { Resend } from 'resend'
+import { getDb, resetDbOnError } from './_lib/db.js'
 
 const TO_EMAIL = 'mahmoudelsharawy92@gmail.com'
 const LIMITS = { name: 100, email: 254, message: 5000 }
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-// Reused across warm invocations so each request doesn't open a new connection
-let clientPromise
-
-function getDb() {
-  clientPromise ??= new MongoClient(process.env.MONGODB_URI).connect()
-  return clientPromise.then((client) => client.db())
-}
 
 const escapeHtml = (value) =>
   value.replace(
@@ -72,8 +64,7 @@ export default async function handler(req, res) {
     return res.status(201).json({ message: 'Message sent successfully!' })
   } catch (err) {
     console.error('Contact form failed:', err)
-    // Drop a failed connection so the next request reconnects
-    if (err?.name?.startsWith('Mongo')) clientPromise = undefined
+    resetDbOnError(err)
     return res.status(500).json({ message: 'Something went wrong' })
   }
 }

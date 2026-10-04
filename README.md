@@ -37,7 +37,7 @@ npm install
 npm run dev
 ```
 
-The contact form posts to `/api/contact`, a Vercel function that needs `MONGODB_URI` and `RESEND_API_KEY` (set them in Vercel → Settings → Environment Variables). `npm run dev` doesn't run functions: use `npx vercel dev`, or set `VITE_API_URL` in `.env` to a deployed site. See `.env.example`.
+The contact form posts to `/api/contact`, a Vercel function that needs `MONGODB_URI` and `RESEND_API_KEY` (set them in Vercel → Settings → Environment Variables). A weekly Vercel Cron calls `/api/keep-alive` so MongoDB Atlas doesn't pause the free cluster for inactivity (set `CRON_SECRET` to protect it). `npm run dev` doesn't run functions: use `npx vercel dev`, or set `VITE_API_URL` in `.env` to a deployed site. See `.env.example`.
 
 ## 🪪 Digital Business Card (`/card`)
 
