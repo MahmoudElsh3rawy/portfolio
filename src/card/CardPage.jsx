@@ -165,7 +165,7 @@ function CardPage() {
           <SectionTitle>{t.work}</SectionTitle>
           {projects.map((project) => (
             <article
-              key={project.url}
+              key={project.title.en}
               className="flex flex-col gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/5 px-3 pt-3"
             >
               <div className="aspect-[16/10] overflow-hidden rounded-xl bg-white">
@@ -188,17 +188,19 @@ function CardPage() {
                 </p>
               </div>
               <a
-                href={project.url}
-                {...external}
+                href={project.url ?? `${SITE_URL}/#projects`}
+                {...(project.url ? external : {})}
                 className="-mx-3 flex h-12 items-center justify-between gap-3 border-t border-white/10 px-4 text-[0.875em] font-medium text-blue-400 transition-colors duration-150 hover:bg-white/5 hover:text-[#60a5fa]"
               >
                 <span className="flex items-center gap-1.5">
-                  {t.visit}
+                  {project.url ? t.visit : t.details}
                   <span aria-hidden="true">{t.visitArrow}</span>
                 </span>
-                <span dir="ltr" className="text-[0.92em] font-normal text-gray-400">
-                  {new URL(project.url).hostname}
-                </span>
+                {project.url && (
+                  <span dir="ltr" className="text-[0.92em] font-normal text-gray-400">
+                    {new URL(project.url).hostname}
+                  </span>
+                )}
               </a>
             </article>
           ))}
