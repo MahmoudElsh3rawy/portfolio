@@ -38,7 +38,6 @@ export function buildVCard() {
     `EMAIL;TYPE=INTERNET,PREF:${profile.email}`,
     `ADR;TYPE=WORK:;;;${escapeText(profile.location.city)};;;${escapeText(profile.location.country)}`,
     `URL:${SITE_URL}`,
-    `NOTE:${escapeText(profile.tagline.en)}`,
     `PHOTO;ENCODING=b;TYPE=JPEG:${photo}`,
     'END:VCARD',
   ]

@@ -2,9 +2,9 @@ export const profile = {
   name: { en: 'Mahmoud Elsharawy', ar: 'محمود الشعراوي' },
   firstName: 'Mahmoud',
   lastName: 'Elsharawy',
-  title: 'Full Stack Developer',
+  title: 'Software Engineer | Full Stack Developer',
   tagline: {
-    en: 'I build websites and apps for businesses',
+    en: 'Software Engineer | Full Stack Developer',
     ar: 'أصمم وأطوّر مواقع وتطبيقات للأعمال',
   },
   location: { city: 'Alexandria', country: 'Egypt' },
