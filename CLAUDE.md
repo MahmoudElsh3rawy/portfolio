@@ -1,0 +1,74 @@
+# Project notes for Claude
+
+Context for continuing work on this repo in a new chat. Keep it up to date when
+something here changes.
+
+## Owner and workflow
+
+- Owner: Mahmoud Elsharawy (محمود الشعراوي), freelance Full Stack Developer,
+  Alexandria, Egypt. Talks in Egyptian Arabic; answer in Arabic.
+- One change at a time: new branch with a descriptive name
+  (e.g. `content/...`, `feat/...`, `fix/...`, `docs/...`), commit, push, open
+  a PR. He reviews and merges himself. Never push to `main`.
+- Commits are authored in his name, without a Co-Authored-By trailer:
+  `git config user.name "MahmoudElsh3rawy"`,
+  `git config user.email "mahmoudelsharawy92@gmail.com"`.
+- Never ask for or paste secret values (MONGODB_URI, RESEND_API_KEY,
+  CRON_SECRET) in chat. They live only in Vercel → Settings → Environment
+  Variables, type **Secret**.
+
+## Stack and layout
+
+- React 19 + Vite 8 + Tailwind 4 (no config file), deployed on Vercel:
+  https://mahmoudelsharawy.vercel.app. CI: `.github/workflows/ci.yml`
+  (lint + build, Node 22). `main` is protected by a ruleset.
+- Multi-page build: `index.html` (portfolio) and `card/index.html` (`/card`,
+  digital business card, its own static OG tags).
+- Single source of truth for the domain: `SITE_URL` in `src/data/site.js`.
+  `%SITE_URL%` in HTML, `robots.txt`, `sitemap.xml` and the vCard are generated
+  from it by `scripts/vite-site-plugin.js`.
+- Personal data: `src/data/profile.js` (name, title, tagline, phones, links).
+  Primary phone = calls + WhatsApp; secondary = calls only (no call button for
+  it on `/card` — decided).
+- `/card`: `src/card/` (CardPage, content.js EN/AR, card.css). Language is set
+  before paint: `?lang=` > localStorage `card-lang` > device language.
+  vCard built by `scripts/card/vcard.js` (served at `/card/Mahmoud-Elsharawy.vcf`).
+- Contact form: `src/components/Contact.jsx` → `api/contact.js` (Vercel
+  function: MongoDB `contacts` collection + Resend email from
+  `onboarding@resend.dev`). `api/_lib/db.js` shared client.
+  `api/keep-alive.js` + weekly cron in `vercel.json` keep the Atlas M0 cluster
+  from auto-pausing. The old `portfolio-backend` repo (Render) is unused.
+- Scripts (need Chrome via `CHROME_PATH` for Playwright):
+  `npm run card:qr` (refuses while the domain is `*.vercel.app`),
+  `npm run card:export` (OG image + printed card PDFs/PNGs into `print/`),
+  `npm run card:signature` (email signature HTML into `print/`).
+  `print/` is gitignored — print files are sent to him directly, not committed.
+- Design: `docs/card/DESIGN_HANDOFF.md`, `docs/card/CARD_DESIGN_BRIEF.md`.
+  Tokens: bg `#0F172A`, primary `#2B7FFF`, accent `#51A2FF`, fonts Space
+  Grotesk / IBM Plex Sans Arabic / Pacifico (ME logo).
+
+## Decisions already made
+
+- English title: "Software Engineer | Full Stack Developer".
+  Arabic line: "أصمم وأطوّر مواقع وتطبيقات للأعمال" (keep as is).
+- Printed card: dark version. Back CTA "دع موقعك يتحدث عنك" /
+  "امسح الرمز للتواصل معي ومشاهدة أعمالي" (formal Arabic, no colloquial copy).
+- Navbar: no Home link (logo scrolls to top), no Reviews link.
+
+## Pending (deferred by him, in this order)
+
+1. **Domain** — he wants advice choosing one. After buying: connect it in
+   Vercel, change `SITE_URL` in `src/data/site.js`, run `card:qr`,
+   `card:export`, `card:signature`, PR, deploy. Don't print cards or lock NFC
+   tags before this.
+2. **Printed card front** — he still has to pick which line to drop; proposal:
+   drop or shorten the role line "مطوّر مواقع وتطبيقات · الإسكندرية" (repeats
+   the tagline). Generate the final PDFs after the domain.
+3. **Full Arabic version of the main site.**
+4. **Email from his own domain** (verify the domain in Resend, replace
+   `onboarding@resend.dev`).
+
+His own to-dos: delete the Render service; enable "Automatically delete head
+branches" and clean old branches; re-paste the new signature in Gmail;
+optionally add `CRON_SECRET`; put the `/card` link in Instagram bio and
+WhatsApp About.
