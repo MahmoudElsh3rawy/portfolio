@@ -1,5 +1,5 @@
-import advisorsImg from '../assets/projects/advisors.png'
-import ecommerceImg from '../assets/projects/ecommerce.png'
+import advisorsImg from '../assets/projects/advisors.webp'
+import ecommerceImg from '../assets/projects/ecommerce.webp'
 import { profile } from '../data/profile.js'
 
 export const strings = {
