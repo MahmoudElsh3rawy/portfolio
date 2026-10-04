@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { FaGithub, FaExternalLinkAlt, FaLock } from 'react-icons/fa'
-import advisorsImg from '../assets/projects/advisors.png'
-import entityImg from '../assets/projects/entity-generator.png'
-import ecommerceImg from '../assets/projects/ecommerce.png'
-import dashboardImg from '../assets/projects/admin-dashboard.png'
-import carServicesImg from '../assets/projects/car-services.png'
-import articlesImg from '../assets/projects/articles.png'
+import advisorsImg from '../assets/projects/advisors.webp'
+import entityImg from '../assets/projects/entity-generator.webp'
+import ecommerceImg from '../assets/projects/ecommerce.webp'
+import dashboardImg from '../assets/projects/admin-dashboard.webp'
+import carServicesImg from '../assets/projects/car-services.webp'
+import articlesImg from '../assets/projects/articles.webp'
 
 const projects = [
   {
