@@ -12,8 +12,10 @@ export const profile = {
   phone: {
     primary: '+201226034294',
     secondary: '+201157229382',
-    // How the WhatsApp number is printed on the Arabic card
+    // How the numbers are printed on the Arabic card (primary: calls + WhatsApp,
+    // secondary: calls only)
     local: '0122 603 4294',
+    secondaryLocal: '0115 722 9382',
   },
   links: {
     upwork: 'https://www.upwork.com/freelancers/mahmoudelsharawy',

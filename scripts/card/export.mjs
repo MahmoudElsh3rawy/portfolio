@@ -5,9 +5,9 @@
 //   print/card-back-DRAFT.pdf / .png     until then, with a placeholder instead of the QR
 // Usage: npm run card:export   (needs Chrome; set CHROME_PATH if it isn't found)
 import { mkdirSync, rmSync } from 'node:fs'
-import { FaArrowLeftLong, FaEnvelope, FaWhatsapp } from 'react-icons/fa6'
+import { FaArrowLeftLong, FaEnvelope, FaGlobe, FaPhone, FaWhatsapp } from 'react-icons/fa6'
 import { profile } from '../../src/data/profile.js'
-import { CARD_URL } from '../../src/data/site.js'
+import { CARD_URL, SITE_URL } from '../../src/data/site.js'
 import {
   FONTS_LINK,
   dataUri,
@@ -67,32 +67,52 @@ const cardCss = `@page{size:91mm 61mm;margin:0}
   .latin{font-family:'Space Grotesk',sans-serif;unicode-bidi:isolate}
   .logo{font-family:'Pacifico',cursive;color:${ACCENT}}`
 
+// Printed-card copy (Arabic, formal register to match the tagline)
+const printCopy = {
+  role: 'مطوّر مواقع وتطبيقات · الإسكندرية',
+  services: 'مواقع شركات · متاجر إلكترونية · تطبيقات ويب',
+  backTitle: 'دع موقعك يتحدث عنك',
+  backSubtitle: 'امسح الرمز للتواصل معي ومشاهدة أعمالي',
+}
+
+const siteHost = new URL(SITE_URL).hostname
+
 const frontHtml = () =>
   base(
-    `<div class="safe" dir="rtl">
+    `<div class="rings"><i></i><i></i></div>
+    <div class="safe" dir="rtl">
       <div class="top">
         <div class="row"><span class="ar name">${profile.name.ar}</span><span class="logo" dir="ltr">ME</span></div>
+        <span class="ar role">${printCopy.role}</span>
         <span class="ar line">${profile.tagline.ar}</span>
         <span class="bar"></span>
+        <span class="ar services">${printCopy.services}</span>
       </div>
       <div class="contacts">
-        <div class="contact"><span class="ic">${icon(FaWhatsapp, '3.14mm')}</span><span class="latin phone" dir="ltr">${profile.phone.local}</span></div>
-        <div class="contact"><span class="ic">${icon(FaEnvelope, '2.57mm')}</span><span class="latin email" dir="ltr">${profile.email}</span></div>
+        <div class="contact"><span class="ics">${icon(FaPhone, '2.3mm')}${icon(FaWhatsapp, '2.7mm')}</span><span class="latin phone" dir="ltr">${profile.phone.local}</span></div>
+        <div class="contact"><span class="ics">${icon(FaPhone, '2.3mm')}</span><span class="latin phone" dir="ltr">${profile.phone.secondaryLocal}</span></div>
+        <div class="contact"><span class="ics">${icon(FaEnvelope, '2.4mm')}</span><span class="latin small" dir="ltr">${profile.email}</span></div>
+        <div class="contact"><span class="ics">${icon(FaGlobe, '2.4mm')}</span><span class="latin small" dir="ltr">${siteHost}</span></div>
       </div>
     </div>`,
     `${cardCss}
+    .rings i{position:absolute;border-radius:50%;border:.25mm dashed rgba(81,162,255,.22)}
+    .rings i:first-child{width:46mm;height:46mm;left:-14mm;bottom:-16mm}
+    .rings i:last-child{width:62mm;height:62mm;left:-22mm;bottom:-24mm;border-color:rgba(81,162,255,.12)}
     .safe{flex-direction:column;justify-content:space-between}
     .top{display:flex;flex-direction:column}
     .row{display:flex;justify-content:space-between;align-items:flex-start}
-    .name{font-weight:700;font-size:5mm;line-height:1.3}
+    .name{font-weight:700;font-size:5mm;line-height:1.25}
     .logo{font-size:3.43mm;line-height:1.2}
-    .line{margin-top:.86mm;font-size:3mm;line-height:1.6;color:${BODY}}
-    .bar{margin-top:2.57mm;width:8mm;height:.43mm;border-radius:.29mm;background:${BLUE}}
-    .contacts{display:flex;flex-direction:column;gap:1.71mm}
-    .contact{display:flex;align-items:center;gap:1.71mm}
-    .ic{width:3.43mm;display:flex;justify-content:center;color:${ACCENT}}
-    .phone{font-weight:500;font-size:3.14mm}
-    .email{font-weight:500;font-size:2.86mm}`
+    .role{margin-top:.3mm;font-size:2.3mm;line-height:1.5;color:${MUTED}}
+    .line{margin-top:.6mm;font-size:2.8mm;line-height:1.5;color:${BODY}}
+    .bar{margin-top:1.6mm;width:8mm;height:.43mm;border-radius:.29mm;background:${BLUE}}
+    .services{margin-top:1.6mm;font-size:2.3mm;line-height:1.5;font-weight:500;color:${ACCENT}}
+    .contacts{display:flex;flex-direction:column;gap:1.05mm}
+    .contact{display:flex;align-items:center;gap:1.4mm}
+    .ics{width:6mm;display:flex;align-items:center;gap:.8mm;color:${ACCENT}}
+    .phone{font-weight:500;font-size:2.8mm;line-height:1.2}
+    .small{font-weight:500;font-size:2.5mm;line-height:1.2}`
   )
 
 // QR sized so the quiet zone inside the 36 mm white tile is at least 4 modules
@@ -122,7 +142,8 @@ const backHtml = (final) => {
   return base(
     `<div class="safe" dir="rtl">
       <div class="cta">
-        <span class="ar title">امسح وشوف شغلي</span>
+        <span class="ar title">${printCopy.backTitle}</span>
+        <span class="ar sub">${printCopy.backSubtitle}</span>
         <span class="arrow">${icon(FaArrowLeftLong, '4mm')}</span>
       </div>
       <div class="qr-col">
@@ -132,8 +153,9 @@ const backHtml = (final) => {
     </div>`,
     `${cardCss}
     .safe{align-items:center;justify-content:space-between}
-    .cta{display:flex;flex-direction:column;gap:2mm;padding-inline-start:.57mm}
-    .title{font-weight:700;font-size:4.86mm;line-height:1.35;white-space:nowrap}
+    .cta{display:flex;flex-direction:column;gap:1.6mm;padding-inline-start:.57mm;max-width:36mm}
+    .title{font-weight:700;font-size:4.6mm;line-height:1.35;text-wrap:balance}
+    .sub{font-size:2.5mm;line-height:1.6;color:${BODY};text-wrap:balance}
     .arrow{color:${ACCENT}}
     .qr-col{display:flex;flex-direction:column;align-items:center;gap:1.43mm}
     .tile{width:${tile}mm;height:${tile}mm;padding:${padding}mm;border-radius:2.43mm;background:#fff}
@@ -170,6 +192,8 @@ for (const stale of ['card-back', 'card-back-DRAFT']) {
 }
 for (const [name, html] of sides) {
   const page = await renderPage(browser, html, printViewport, 300 / 96)
+  const overflow = await page.$eval('.safe', (el) => el.scrollHeight - el.clientHeight)
+  if (overflow > 1) console.warn(`⚠ ${name}: content overflows the safe area by ${overflow}px`)
   await page.pdf({
     path: fromRoot(`print/${name}.pdf`).pathname,
     width: '91mm',

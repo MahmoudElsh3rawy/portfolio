@@ -53,7 +53,7 @@ A bilingual (Arabic RTL / English LTR) link-in-bio page with a **Save Contact** 
 | `npm run card:export` | `public/og-card.jpg` and the printed card PDFs/PNGs in `print/` (85 × 55 mm + 3 mm bleed). The back stays `card-back-DRAFT` until the QR exists |
 | `npm run card:signature` | `print/email-signature.html` |
 
-`card:export` needs Google Chrome; set `CHROME_PATH` to use another Chrome/Chromium binary.
+`card:export` needs Google Chrome; set `CHROME_PATH` to use another Chrome/Chromium binary. The `print/` folder is generated and not committed.
 
 **After buying the domain:** update `SITE_URL` in `src/data/site.js` → `npm run card:qr` → `npm run card:export` → `npm run card:signature` → commit and deploy.
 
