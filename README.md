@@ -25,9 +25,9 @@ A modern, responsive personal portfolio website built with React.js and Vite.
 - AOS Animations
 - React Icons
 - Vercel Web Analytics
-- Node.js & Express (Backend)
-- MongoDB Atlas (Database)
-- Nodemailer (Contact Form)
+- Vercel Serverless Function (`api/contact.js`, contact form API)
+- MongoDB Atlas (stores messages)
+- Resend (emails new messages)
 - GitHub Actions (CI: lint & build on every PR)
 
 ## 🚀 Getting Started
@@ -37,7 +37,7 @@ npm install
 npm run dev
 ```
 
-To point the contact form at a different backend (e.g. a local server), copy `.env.example` to `.env` and set `VITE_API_URL`.
+The contact form posts to `/api/contact`, a Vercel function that needs `MONGODB_URI` and `RESEND_API_KEY` (set them in Vercel → Settings → Environment Variables). `npm run dev` doesn't run functions: use `npx vercel dev`, or set `VITE_API_URL` in `.env` to a deployed site. See `.env.example`.
 
 ## 🪪 Digital Business Card (`/card`)
 
