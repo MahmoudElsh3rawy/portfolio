@@ -59,7 +59,7 @@ A bilingual (Arabic RTL / English LTR) link-in-bio page with a **Save Contact** 
 
 ## 📸 Preview
 
-![Portfolio Preview](https://i.postimg.cc/3xRhdQdM/1.jpg)
+![Portfolio Preview](docs/preview.webp)
 
 ## 📬 Contact
 

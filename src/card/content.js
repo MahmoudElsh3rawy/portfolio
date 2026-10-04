@@ -6,7 +6,7 @@ export const strings = {
   en: {
     name: profile.name.en,
     tagline: profile.tagline.en,
-    meta: 'Full Stack Developer · Alexandria, Egypt',
+    meta: 'Alexandria, Egypt',
     jobSuccess: '100% Job Success',
     rating: '5.0 client rating',
     save: 'Save Contact',
