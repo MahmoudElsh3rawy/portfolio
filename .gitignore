@@ -26,3 +26,6 @@ dist-ssr
 # Environment variables
 .env
 .env.local
+
+# Generated print files (npm run card:export / card:qr / card:signature)
+print/

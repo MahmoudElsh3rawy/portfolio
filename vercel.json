@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [{ "source": "/card", "destination": "/card/index.html" }],
+  "headers": [
+    {
+      "source": "/card/(.*)\\.vcf",
+      "headers": [
+        { "key": "Content-Type", "value": "text/vcard; charset=utf-8" },
+        { "key": "Content-Disposition", "value": "inline; filename=\"Mahmoud-Elsharawy.vcf\"" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+/* Shared by the main site (src/index.css) and the /card page (src/card/card.css) */
+body {
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1a2744 40%,
+    #0d1b3e 70%,
+    #0f172a 100%
+  );
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #60a5fa, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

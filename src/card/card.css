@@ -1,0 +1,10 @@
+/* Only scan the card's own files so this page ships a small stylesheet */
+@import 'tailwindcss' source(none);
+@source './';
+@import '../styles/shared.css';
+
+@theme {
+  --font-card: 'Space Grotesk', 'IBM Plex Sans Arabic', sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', 'Space Grotesk', sans-serif;
+  --font-logo: 'Pacifico', cursive;
+}
