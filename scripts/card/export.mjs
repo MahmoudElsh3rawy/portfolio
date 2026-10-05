@@ -69,7 +69,7 @@ const cardCss = `@page{size:91mm 61mm;margin:0}
 
 // Printed-card copy (Arabic, formal register to match the tagline)
 const printCopy = {
-  role: 'مطوّر مواقع وتطبيقات · الإسكندرية',
+  city: 'الإسكندرية، مصر',
   services: 'مواقع شركات · متاجر إلكترونية · تطبيقات ويب',
   backTitle: 'دع موقعك يتحدث عنك',
   backSubtitle: 'امسح الرمز للتواصل معي ومشاهدة أعمالي',
@@ -83,8 +83,8 @@ const frontHtml = () =>
     <div class="safe" dir="rtl">
       <div class="top">
         <div class="row"><span class="ar name">${profile.name.ar}</span><span class="logo" dir="ltr">ME</span></div>
-        <span class="ar role">${printCopy.role}</span>
         <span class="ar line">${profile.tagline.ar}</span>
+        <span class="ar city">${printCopy.city}</span>
         <span class="bar"></span>
         <span class="ar services">${printCopy.services}</span>
       </div>
@@ -104,8 +104,8 @@ const frontHtml = () =>
     .row{display:flex;justify-content:space-between;align-items:flex-start}
     .name{font-weight:700;font-size:5mm;line-height:1.25}
     .logo{font-size:3.43mm;line-height:1.2}
-    .role{margin-top:.3mm;font-size:2.3mm;line-height:1.5;color:${MUTED}}
     .line{margin-top:.6mm;font-size:2.8mm;line-height:1.5;color:${BODY}}
+    .city{margin-top:.2mm;font-size:2.3mm;line-height:1.5;color:${MUTED}}
     .bar{margin-top:1.6mm;width:8mm;height:.43mm;border-radius:.29mm;background:${BLUE}}
     .services{margin-top:1.6mm;font-size:2.3mm;line-height:1.5;font-weight:500;color:${ACCENT}}
     .contacts{display:flex;flex-direction:column;gap:1.05mm}

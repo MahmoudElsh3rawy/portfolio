@@ -50,7 +50,9 @@ something here changes.
 ## Decisions already made
 
 - English title: "Software Engineer | Full Stack Developer".
-  Arabic line: "أصمم وأطوّر مواقع وتطبيقات للأعمال" (keep as is).
+  Arabic line: "مصمّم ومطوّر مواقع وتطبيقات الأعمال" (his wording). The Arabic role
+  line was dropped as a duplicate: the line under it (card meta and the printed
+  card) is just the city "الإسكندرية، مصر". English stays untouched.
 - Printed card: dark version. Back CTA "دع موقعك يتحدث عنك" /
   "امسح الرمز للتواصل معي ومشاهدة أعمالي" (formal Arabic, no colloquial copy).
 - Navbar: no Home link (logo scrolls to top), no Reviews link.
@@ -66,9 +68,8 @@ something here changes.
    Vercel, change `SITE_URL` in `src/data/site.js`, run `card:qr`,
    `card:export`, `card:signature`, PR, deploy. Don't print cards or lock NFC
    tags before this.
-2. **Printed card front** — he still has to pick which line to drop; proposal:
-   drop or shorten the role line "مطوّر مواقع وتطبيقات · الإسكندرية" (repeats
-   the tagline). Generate the final PDFs after the domain.
+2. **Printed card** — copy is settled; generate the final PDFs after the
+   domain.
 3. **Full Arabic version of the main site.**
 4. **Email from his own domain** (verify the domain in Resend, replace
    `onboarding@resend.dev`).
