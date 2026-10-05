@@ -5,7 +5,7 @@ export const profile = {
   title: 'Software Engineer | Full Stack Developer',
   tagline: {
     en: 'Software Engineer | Full Stack Developer',
-    ar: 'أصمم وأطوّر مواقع وتطبيقات للأعمال',
+    ar: 'مصمّم ومطوّر مواقع وتطبيقات الأعمال',
   },
   location: { city: 'Alexandria', country: 'Egypt' },
   email: 'mahmoudelsharawy92@gmail.com',

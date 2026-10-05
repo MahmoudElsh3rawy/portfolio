@@ -26,7 +26,7 @@ export const strings = {
   ar: {
     name: profile.name.ar,
     tagline: profile.tagline.ar,
-    meta: 'مطوّر مواقع وتطبيقات (Full Stack) · الإسكندرية، مصر',
+    meta: 'الإسكندرية، مصر',
     jobSuccess: 'نسبة نجاح 100%',
     rating: 'تقييم 5.0',
     save: 'احفظ جهة الاتصال',
