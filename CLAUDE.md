@@ -57,6 +57,9 @@ something here changes.
 - Printed card: dark version. Back CTA "دع موقعك يتحدث عنك" /
   "امسح الرمز للتواصل معي ومشاهدة أعمالي" (formal Arabic, no colloquial copy).
 - Navbar: no Home link (logo scrolls to top), no Reviews link.
+- /card badges: 100% Job Success, 5.0 rating, and Rising Talent on its own row
+  (`risingTalent` in `src/card/content.js`). Replace Rising Talent with
+  Top Rated once Upwork awards it.
 
 - Advisors Platform: the client took advisors.startupkit.io down and he can't
   reach the client. The live link is removed (portfolio shows "Private
