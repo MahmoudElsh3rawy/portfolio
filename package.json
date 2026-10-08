@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "card:qr": "node scripts/card/qr.mjs",
     "card:export": "node scripts/card/export.mjs",
-    "card:signature": "node scripts/card/signature.mjs"
+    "card:signature": "node scripts/card/signature.mjs",
+    "card:screen": "node scripts/card/screen.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

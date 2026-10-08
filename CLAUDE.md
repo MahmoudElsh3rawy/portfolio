@@ -41,7 +41,8 @@ something here changes.
 - Scripts (need Chrome via `CHROME_PATH` for Playwright):
   `npm run card:qr` (refuses while the domain is `*.vercel.app`),
   `npm run card:export` (OG image + printed card PDFs/PNGs into `print/`),
-  `npm run card:signature` (email signature HTML into `print/`).
+  `npm run card:signature` (email signature HTML into `print/`),
+  `npm run card:screen` (phone-screen QR image he shows instead of NFC).
   `print/` is gitignored — print files are sent to him directly, not committed.
 - Design: `docs/card/DESIGN_HANDOFF.md`, `docs/card/CARD_DESIGN_BRIEF.md`.
   Tokens: bg `#0F172A`, primary `#2B7FFF`, accent `#51A2FF`, fonts Space
@@ -67,9 +68,10 @@ something here changes.
 1. **Domain** — he wants advice choosing one. After buying: connect it in
    Vercel, change `SITE_URL` in `src/data/site.js`, run `card:qr`,
    `card:export`, `card:signature`, PR, deploy. Don't print cards or lock NFC
-   tags before this.
-2. **Printed card** — copy is settled; generate the final PDFs after the
-   domain.
+   tags before this. Also re-run `card:screen` and send him the new image.
+2. **Printed card** — generate the final PDFs after the domain. Still open:
+   whether to drop the back subtitle "امسح الرمز للتواصل معي ومشاهدة أعمالي"
+   (he dropped the same line from the phone-screen QR; decide at print time).
 3. **Full Arabic version of the main site.**
 4. **Email from his own domain** (verify the domain in Resend, replace
    `onboarding@resend.dev`).
