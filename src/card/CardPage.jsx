@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import {
   FaAddressCard,
+  FaArrowTrendUp,
   FaChevronRight,
   FaCircleCheck,
   FaEnvelope,
@@ -119,14 +120,19 @@ function CardPage() {
           <p className="mt-2 max-w-[320px] text-balance">{t.tagline}</p>
           <p className="mt-1 text-[0.8125em] text-gray-400">{t.meta}</p>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
-            <span className="flex h-[30px] items-center gap-[7px] rounded-full border border-white/10 bg-white/5 px-3 text-[0.8125em]">
-              <FaUpwork className="text-[13px] text-blue-400" aria-hidden="true" />
-              {t.jobSuccess}
-            </span>
-            <span className="flex h-[30px] items-center gap-[7px] rounded-full border border-white/10 bg-white/5 px-3 text-[0.8125em]">
-              <FaStar className="text-[11px] text-orange-400" aria-hidden="true" />
-              {t.rating}
-            </span>
+            {[
+              { icon: FaUpwork, iconClass: 'text-[13px] text-blue-400', label: t.jobSuccess },
+              { icon: FaStar, iconClass: 'text-[11px] text-orange-400', label: t.rating },
+              { icon: FaArrowTrendUp, iconClass: 'text-[12px] text-blue-400', label: t.risingTalent },
+            ].map(({ icon: Icon, iconClass, label }) => (
+              <span
+                key={label}
+                className="flex h-[30px] items-center gap-[7px] rounded-full border border-white/10 bg-white/5 px-3 text-[0.8125em]"
+              >
+                <Icon className={iconClass} aria-hidden="true" />
+                {label}
+              </span>
+            ))}
           </div>
         </header>
 

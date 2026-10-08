@@ -9,6 +9,8 @@ export const strings = {
     meta: 'Alexandria, Egypt',
     jobSuccess: '100% Job Success',
     rating: '5.0 client rating',
+    // Swap for Top Rated once Upwork awards it
+    risingTalent: 'Upwork Rising Talent',
     save: 'Save Contact',
     whatsapp: 'WhatsApp',
     email: 'Email',
@@ -29,6 +31,7 @@ export const strings = {
     meta: 'الإسكندرية، مصر',
     jobSuccess: 'نسبة نجاح 100%',
     rating: 'تقييم 5.0',
+    risingTalent: 'موهبة صاعدة على Upwork',
     save: 'احفظ جهة الاتصال',
     whatsapp: 'واتساب',
     email: 'البريد الإلكتروني',
