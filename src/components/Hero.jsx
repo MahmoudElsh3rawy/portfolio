@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import profileImg from '../assets/profile.webp'
 import { FaReact, FaNodeJs } from 'react-icons/fa'
-import { SiMongodb, SiNextdotjs } from 'react-icons/si'
+import { SiMongodb, SiNextdotjs, SiUpwork } from 'react-icons/si'
 
 const sentences = [
   'Clean & Scalable Code',
@@ -10,6 +10,15 @@ const sentences = [
   'Solutions for your business problems',
   'Perfect UI Design',
   'Robust Backend APIs',
+]
+
+// Set `hidden: true` to keep a stat in the code without showing it on the site
+const stats = [
+  { value: '3+', label: 'Years Experience' },
+  { value: '6+', label: 'Projects Completed' },
+  { value: '3+', label: 'Happy Clients', hidden: true },
+  { value: '100%', label: 'Job Success', upwork: true },
+  { value: '5.0', label: 'Client Rating', upwork: true },
 ]
 
 function Hero() {
@@ -48,7 +57,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 relative overflow-hidden pt-28 pb-12 md:pt-20 md:pb-0"
+      className="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 relative overflow-hidden pt-28 pb-20 md:pt-20 md:pb-0"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left Side */}
@@ -86,6 +95,23 @@ function Hero() {
               View My Projects
             </a>
           </div>
+
+          <dl className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
+            {stats
+              .filter((stat) => !stat.hidden)
+              .map(({ value, label, upwork }) => (
+                <div
+                  key={label}
+                  className="flex flex-col-reverse justify-end bg-white/5 border border-white/10 rounded-xl px-3 py-3 text-center"
+                >
+                  <dt className="text-gray-400 text-xs sm:text-sm mt-1 flex items-center justify-center gap-1">
+                    {upwork && <SiUpwork className="text-green-400 shrink-0" aria-label="Upwork" />}
+                    {label}
+                  </dt>
+                  <dd className="text-2xl sm:text-3xl font-bold gradient-text">{value}</dd>
+                </div>
+              ))}
+          </dl>
         </div>
 
         {/* Right Side - Image */}

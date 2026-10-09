@@ -60,7 +60,8 @@ something here changes.
 - Floating WhatsApp button on the portfolio (`src/components/WhatsAppButton.jsx`,
   prefilled message); the scroll-to-top button is stacked above it. Ideas taken
   from sharkclicks.com, done one per PR: 1) WhatsApp button (done), 2) stats
-  strip under the hero, 3) a call-to-action band before Contact, 4) "how I
+  strip under the hero (done: `stats` in `Hero.jsx`, moved out of About;
+  "3+ Happy Clients" kept with `hidden: true` at his request), 3) a call-to-action band before Contact, 4) "how I
   work" steps + FAQ (with the Arabic site).
 - /card badges: 100% Job Success, 5.0 rating, and Rising Talent on its own row
   (`risingTalent` in `src/card/content.js`). Replace Rising Talent with
