@@ -42,13 +42,13 @@ function ScrollArrow() {
         </svg>
       </button>
 
-      {/* Scroll To Top - Fixed Button */}
+      {/* Scroll To Top - Fixed Button, stacked above the WhatsApp button */}
       {showTop && (
         <button
           type="button"
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="fixed bottom-8 right-8 z-50 bg-blue-500 hover:bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+          className="fixed bottom-[5.5rem] right-7 sm:bottom-24 sm:right-9 z-50 bg-blue-500 hover:bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
         >
           ↑
         </button>
