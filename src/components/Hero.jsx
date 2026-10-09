@@ -57,7 +57,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 relative overflow-hidden pt-28 pb-20 md:pt-20 md:pb-0"
+      className="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 relative overflow-hidden pt-28 pb-28 md:pt-20 md:pb-0"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left Side */}
