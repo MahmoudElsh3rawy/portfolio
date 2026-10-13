@@ -9,6 +9,15 @@ const badges = [
 
 const testimonials = [
   {
+    project: 'Tauri React App Developer',
+    tech: 'Tauri · React · React Native',
+    date: 'Oct 2026',
+    quote: [
+      'The service was professional, communication was clear, and the process went smoothly',
+    ],
+    endorsements: ['Solution Oriented', 'Clear Communicator', 'Detail Oriented', 'Professional'],
+  },
+  {
     project: 'Full-Stack Newsletter Signup Feature',
     tech: 'React · Node.js · MongoDB',
     date: 'Jul 2026',
@@ -58,7 +67,7 @@ function Testimonials() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((item) => (
             <figure
               key={item.project}
@@ -84,6 +93,18 @@ function Testimonials() {
                   </p>
                 ))}
               </blockquote>
+              {item.endorsements && (
+                <ul className="flex flex-wrap gap-2" aria-label="Endorsed by the client">
+                  {item.endorsements.map((label) => (
+                    <li
+                      key={label}
+                      className="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1 rounded-full"
+                    >
+                      {label}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <figcaption className="border-t border-white/10 pt-4">
                 <p className="text-white font-medium text-sm">{item.project}</p>
                 <p className="text-gray-500 text-xs mt-1 flex items-center gap-1">
