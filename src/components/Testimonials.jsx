@@ -7,11 +7,31 @@ const badges = [
   { label: '5.0 Client Rating', color: 'text-orange-400', bg: 'bg-orange-500/10' },
 ]
 
+// Upwork "Insights from completed jobs": how many clients endorsed each trait
+const insights = [
+  ['Professional', 4],
+  ['Clear Communicator', 3],
+  ['Detail Oriented', 3],
+  ['Committed to Quality', 2],
+  ['Solution Oriented', 2],
+  ['Accountable for Outcomes', 1],
+]
+
 const testimonials = [
+  {
+    project: 'Tauri React App Developer',
+    tech: 'Tauri · React · React Native',
+    date: 'Oct 2026',
+    quote: [
+      'The service was professional, communication was clear, and the process went smoothly',
+    ],
+    endorsements: ['Solution Oriented', 'Clear Communicator', 'Detail Oriented', 'Professional'],
+  },
   {
     project: 'Full-Stack Newsletter Signup Feature',
     tech: 'React · Node.js · MongoDB',
     date: 'Jul 2026',
+    endorsements: ['Detail Oriented', 'Professional'],
     quote: [
       'Mahmoud delivered a complete full-stack solution - React form, backend API, and database all working together smoothly. The code was clean and well-documented, and he included a clear setup guide. Communication was professional throughout. Highly recommend for full-stack work.',
     ],
@@ -20,6 +40,7 @@ const testimonials = [
     project: 'Responsive Layout Fixes for a React SaaS Landing Page',
     tech: 'React · Tailwind CSS',
     date: 'Jul 2026',
+    endorsements: ['Committed to Quality'],
     quote: [
       'Mahmoud quickly addressed all the responsiveness issues and delivered a clean, well-implemented solution. The layout now adapts properly across mobile, tablet, and desktop screen sizes, with the card stacking, text overflow, and spacing issues resolved as requested.',
       'Communication was clear and professional, and the updated code was easy to review and maintain. The brief explanation of the changes made the handoff straightforward. Overall, another smooth experience and quality work. I would gladly work with Mahmoud again.',
@@ -29,6 +50,7 @@ const testimonials = [
     project: 'Pricing Section Component for a React SaaS Landing Page',
     tech: 'React · Tailwind CSS',
     date: 'Jul 2026',
+    endorsements: ['Committed to Quality', 'Clear Communicator'],
     quote: [
       'Mahmoud did an excellent job delivering the Pricing Section component exactly as requested. The code was clean, well-structured, and easy to customize. Communication was professional and responsive throughout the project, and the work was completed promptly.',
       'I especially appreciated the attention to detail and the additional monthly/yearly pricing toggle that was included as a thoughtful enhancement. Overall, a smooth experience and a high-quality deliverable. I would be happy to work with Mahmoud again in the future.',
@@ -47,7 +69,7 @@ function Testimonials() {
           Verified reviews from my clients on Upwork
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-6">
           {badges.map((badge) => (
             <span
               key={badge.label}
@@ -58,7 +80,24 @@ function Testimonials() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mb-12 text-center">
+          <p className="text-gray-500 text-sm mb-3">What clients highlight most</p>
+          <ul className="flex flex-wrap justify-center gap-2">
+            {insights.map(([label, count]) => (
+              <li
+                key={label}
+                className="flex items-center gap-2 bg-white/5 border border-white/10 text-gray-300 text-sm px-3 py-1.5 rounded-full"
+              >
+                {label}
+                <span className="text-blue-400 font-medium" aria-label={`endorsed by ${count} clients`}>
+                  ×{count}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((item) => (
             <figure
               key={item.project}
@@ -84,6 +123,18 @@ function Testimonials() {
                   </p>
                 ))}
               </blockquote>
+              {item.endorsements && (
+                <ul className="flex flex-wrap gap-2" aria-label="Endorsed by the client">
+                  {item.endorsements.map((label) => (
+                    <li
+                      key={label}
+                      className="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1 rounded-full"
+                    >
+                      {label}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <figcaption className="border-t border-white/10 pt-4">
                 <p className="text-white font-medium text-sm">{item.project}</p>
                 <p className="text-gray-500 text-xs mt-1 flex items-center gap-1">
