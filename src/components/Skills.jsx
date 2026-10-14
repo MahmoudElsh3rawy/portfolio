@@ -82,7 +82,8 @@ function Skills() {
           <div className="flex-1">
             <p className="text-gray-400 leading-relaxed">
               I mainly work with the MERN Stack with TypeScript and Tailwind
-              CSS. I've worked across different technologies including Java,
+              CSS, and build mobile and desktop apps with React Native and
+              Tauri. I've worked across different technologies including Java,
               Spring Boot, and PHP — which gives me the flexibility to adapt to
               any project's needs. I care about writing clean, maintainable code
               and building interfaces that are both functional and visually
