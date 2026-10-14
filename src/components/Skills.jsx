@@ -21,6 +21,7 @@ import {
   SiSpringboot,
   SiMysql,
   SiVercel,
+  SiTauri,
 } from 'react-icons/si'
 import { VscVscode } from 'react-icons/vsc'
 
@@ -32,6 +33,8 @@ const skillCategories = [
       { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
       { name: 'React.js', icon: FaReact, color: 'text-blue-400' },
       { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
+      { name: 'React Native', icon: FaReact, color: 'text-cyan-400' },
+      { name: 'Tauri', icon: SiTauri, color: 'text-amber-400' },
       { name: 'HTML5', icon: SiHtml5, color: 'text-orange-400' },
       { name: 'CSS3', icon: FaCss3Alt, color: 'text-blue-500' },
       { name: 'Sass', icon: SiSass, color: 'text-pink-400' },
@@ -79,7 +82,8 @@ function Skills() {
           <div className="flex-1">
             <p className="text-gray-400 leading-relaxed">
               I mainly work with the MERN Stack with TypeScript and Tailwind
-              CSS. I've worked across different technologies including Java,
+              CSS, and build mobile and desktop apps with React Native and
+              Tauri. I've worked across different technologies including Java,
               Spring Boot, and PHP — which gives me the flexibility to adapt to
               any project's needs. I care about writing clean, maintainable code
               and building interfaces that are both functional and visually
