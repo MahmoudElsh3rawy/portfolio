@@ -21,6 +21,7 @@ import {
   SiSpringboot,
   SiMysql,
   SiVercel,
+  SiTauri,
 } from 'react-icons/si'
 import { VscVscode } from 'react-icons/vsc'
 
@@ -32,6 +33,8 @@ const skillCategories = [
       { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
       { name: 'React.js', icon: FaReact, color: 'text-blue-400' },
       { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
+      { name: 'React Native', icon: FaReact, color: 'text-cyan-400' },
+      { name: 'Tauri', icon: SiTauri, color: 'text-amber-400' },
       { name: 'HTML5', icon: SiHtml5, color: 'text-orange-400' },
       { name: 'CSS3', icon: FaCss3Alt, color: 'text-blue-500' },
       { name: 'Sass', icon: SiSass, color: 'text-pink-400' },
