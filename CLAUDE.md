@@ -63,9 +63,9 @@ something here changes.
   strip under the hero (done: `stats` in `Hero.jsx`, moved out of About;
   "3+ Happy Clients" kept with `hidden: true` at his request), 3) a call-to-action band before Contact, 4) "how I
   work" steps + FAQ (with the Arabic site).
-- /card badges: 100% Job Success, 5.0 rating, and Rising Talent on its own row
-  (`risingTalent` in `src/card/content.js`). Replace Rising Talent with
-  Top Rated once Upwork awards it.
+- Upwork badges: 100% Job Success, 5.0 rating, and Top Rated (awarded Oct
+  2026, replaced Rising Talent) on /card (`topRated` in `src/card/content.js`,
+  own row) and in the Testimonials badges.
 
 - Advisors Platform: the client took advisors.startupkit.io down and he can't
   reach the client. The live link is removed (portfolio shows "Private

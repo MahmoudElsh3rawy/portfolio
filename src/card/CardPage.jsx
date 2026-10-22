@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import {
   FaAddressCard,
-  FaArrowTrendUp,
+  FaAward,
   FaChevronRight,
   FaCircleCheck,
   FaEnvelope,
@@ -123,7 +123,7 @@ function CardPage() {
             {[
               { icon: FaUpwork, iconClass: 'text-[13px] text-blue-400', label: t.jobSuccess },
               { icon: FaStar, iconClass: 'text-[11px] text-orange-400', label: t.rating },
-              { icon: FaArrowTrendUp, iconClass: 'text-[12px] text-blue-400', label: t.risingTalent },
+              { icon: FaAward, iconClass: 'text-[12px] text-blue-400', label: t.topRated },
             ].map(({ icon: Icon, iconClass, label }) => (
               <span
                 key={label}

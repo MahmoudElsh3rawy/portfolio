@@ -3,7 +3,7 @@ import { SiUpwork } from 'react-icons/si'
 
 const badges = [
   { label: '100% Job Success', color: 'text-green-400', bg: 'bg-green-500/10' },
-  { label: 'Rising Talent', color: 'text-blue-400', bg: 'bg-blue-500/10' },
+  { label: 'Top Rated', color: 'text-blue-400', bg: 'bg-blue-500/10' },
   { label: '5.0 Client Rating', color: 'text-orange-400', bg: 'bg-orange-500/10' },
 ]
 
